@@ -4,7 +4,7 @@ def solve(board):
     rows, cols = len(board), len(board[0])
 
     def dfs(row, col):
-        if row < 0 or row >= rows or col < 0 or col >= cols or board[row][col] != '0':
+        if row < 0 or row >= rows or col < 0 or col >= cols or board[row][col] != 'O':
             return
         board[row][col] = 'S'
         dfs(row-1, col)
@@ -20,10 +20,10 @@ def solve(board):
 
     for i in range(rows):
         for j in range(cols):
-            if board[i][j] == '0':
+            if board[i][j] == 'O':
                 board[i][j] = 'X'
             if board[i][j] == 'S':
-                board[i][j] = '0'
+                board[i][j] = 'O'
 
 
 rows = int(input("Enter the number of rows: "))
